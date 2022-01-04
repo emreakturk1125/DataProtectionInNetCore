@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "yU7BW8co8Umt70sdjulg4vkgPbG2QpiHcaOxVA8cI6M7RO3LRqMQPXPSyXbnLPT1Y2xedFLNu4RcwMJXvVe2hQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\aktur\\Desktop\\CoreLib\\CoreLib\\CORS.WebApi\\CORS.WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aktur\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\aktur\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\aktur\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\aktur\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\aktur\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\aktur\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}

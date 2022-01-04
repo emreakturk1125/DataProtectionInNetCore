@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swagger", "Swagger\Swagger.csproj", "{C12CC98F-5716-4B16-9373-17EC406C3163}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataProtection.Web", "DataProtection.Web\DataProtection.Web.csproj", "{217289B9-0189-4D85-9BF6-9A3191D77969}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecretProtection.Web", "SecretProtection.Web\SecretProtection.Web.csproj", "{15789E62-AA3F-490A-9FAA-C7E641E017A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CORS.WebApi", "CORS.WebApi\CORS.WebApi.csproj", "{DA4B54D0-33BD-45ED-87C4-43C815B2A977}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CORS.Web", "CORS.Web\CORS.Web.csproj", "{1E0BA3F5-582F-4A3F-B757-D72BA342C4E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSS.Web", "XSS.Web\XSS.Web.csproj", "{78CE52DA-5908-4016-99DA-16D581AEB0EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C12CC98F-5716-4B16-9373-17EC406C3163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12CC98F-5716-4B16-9373-17EC406C3163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12CC98F-5716-4B16-9373-17EC406C3163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12CC98F-5716-4B16-9373-17EC406C3163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{217289B9-0189-4D85-9BF6-9A3191D77969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{217289B9-0189-4D85-9BF6-9A3191D77969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{217289B9-0189-4D85-9BF6-9A3191D77969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{217289B9-0189-4D85-9BF6-9A3191D77969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15789E62-AA3F-490A-9FAA-C7E641E017A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15789E62-AA3F-490A-9FAA-C7E641E017A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15789E62-AA3F-490A-9FAA-C7E641E017A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15789E62-AA3F-490A-9FAA-C7E641E017A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA4B54D0-33BD-45ED-87C4-43C815B2A977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA4B54D0-33BD-45ED-87C4-43C815B2A977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA4B54D0-33BD-45ED-87C4-43C815B2A977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA4B54D0-33BD-45ED-87C4-43C815B2A977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E0BA3F5-582F-4A3F-B757-D72BA342C4E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E0BA3F5-582F-4A3F-B757-D72BA342C4E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E0BA3F5-582F-4A3F-B757-D72BA342C4E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E0BA3F5-582F-4A3F-B757-D72BA342C4E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CE52DA-5908-4016-99DA-16D581AEB0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CE52DA-5908-4016-99DA-16D581AEB0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CE52DA-5908-4016-99DA-16D581AEB0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CE52DA-5908-4016-99DA-16D581AEB0EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C106C78F-D3C0-4107-AB8E-E7E88B7A1A1E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,119 @@
+******************** Data Protection (Veri Koruma) ********************
+
+Dış dünyaya açmak istemediğimiz bilgileri şifrelememizi sağlar
+
+IDataProtector
+
+-> Protect()   #-- şifrele --#
+
+-> UnProtect()   #-- şifreyi çöz --#
+
+-> ToTimeLimitedDataProtector  #-- şifrelenmiş data'ya süre vermek için bu metod kullanılır --# 
+
+-> WhiteList/BlackList IP control-1 (IP Kontrol mekanizması)  #-- Belirli IP adreslerinden gelen istekler için sonuç dönsün, bazıları içinse sonuç dönmemesini istersen --#
+     * Uygulama Seviyesinde Middleware eklemelidir
+     * Controller/Method seviyesinde ise Filter eklenmelidir
+
+-> Secret Protection (Hassas bilgiler için)
+     * Secret Manager Tool (kritik bilgilerin varsa connectionstring gibi içinde user id, pass ve bağlantı bilgilerini appsetting.json da tutma) 
+     * Proje'ye Sağ Tık > Manage User Secrets dosyası (secrets.json) içinde tut, uygulama çalışırken  appsetting.json ve secrets.json beraber çalışır
+
+-> CORS (WebApi)  #-- Farklı domainlerden Api ye erişim olması için CORS ayarlarının yapılması gerekir  --#
+
+A.) Uygulama bazında cors ayarları
+----------------------------------
+
+  #region Kural 1 => CORS ayarları bütün domainlerden gelen isteklere izin verdik
+
+                 opt.AddDefaultPolicy(builder =>
+                       {
+                           builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                       }); 
+
+  #endregion
+
+  #region Kural 2 => CORS ayarları yaptık kurak koyduk, belirlediğimiz domainlerden istek gelsin diye
+
+                opt.AddPolicy("AllowSites", builder =>
+                 {
+                     builder.WithOrigins("https://localhost:44328", "https://www.mysite.com").AllowAnyHeader().AllowAnyMethod();
+                 });
+
+                opt.AddPolicy("AllowSites2", builder =>
+                {
+                    builder.WithOrigins("https://www.mysite2.com").WithHeaders(HeaderNames.ContentType,"x-custom-header"); // Header ında cOntentType'ı => "x-custom-header" olanlara izin ver demektir.
+                });
+
+                opt.AddPolicy("AllowSites3", builder =>
+                {
+                    builder.WithOrigins("https://*.example.com").SetIsOriginAllowedToAllowWildcardSubdomains(); //  .example.com ile biten subdomainlere izin ver ör : mysite.example.com
+                });
+
+
+     #endregion
+
+
+      app.UseCors("AllowSites");  // Kural 2 için CORS Ayarı eklediğimiz policy kural adını middleware e eklememiz gerekiyor
+
+B.) Metod, Controller bazında cors ayarları
+-------------------------------------------
+
+    #region Kural 3 => Method,COntroller bazında CORS ayarları bütün domainlerden gelen isteklere izin verdik
+
+                opt.AddPolicy("AllowSites4", builder =>
+                {
+                    builder.WithOrigins("https://localhost:44325").WithMethods("POST","GET").AllowAnyHeader();  
+                });
+
+
+******************** Asp.Net Core Security ********************
+
+1.) Cross Site Scripting (XSS) -> Script saldırısı, Cookie bilgilerinin çalınmasıdır.  
+ 
+-> Uygulamada Html.Raw()  kullanıldı ise XSS saldırılarına açıktır
+-> Html.Raw() kullanıldı ise de html temizleyici kütüphanesini kullanılmalıdır
+
+A.) Reflected XSS 
+B.) Stored XSS
+
+HtmlSanitizer   kütüphanesi html temizleyici kütüphanesini kullanabilirsin
+
+2.) Encoder
+
+HtmlEncoder
+JavascriptEncoder
+UriEncoder
+
+3.) Cross-Site Request Forgery  -> siteler arası isterk hırsızlığı
+   
+ ValidateAntiForgeryToken -> uygulama dışından gelene istekleri kontrol etmek için .Net Core da kullanılan Attribute dur.
+
+4.) Open Redirect Attacks  -> Farklı sitelere yönlendirmedir. Önlemek için  .Net Core da Url.IsLocalUrl() kullanılabilir. gelen url uygulamanın urllerinden biri mi değil mi onu kontrol etmek için
+
+5.) Https & HSTS (http strict transport security)
+
+Https  -> SSL SERTİFİKALI
+
+.Net Core   app.UseHttpsRedirection() middleware eklenir.
+
+Hsts   -> 
+
+6.) SQL Injection 
+
+var product = _context.Product.FromSqlRaw("Select* from ..");   -> Sql Injection saldırılarına açık eder uygulamayı
+
+Ham sql sorguları yazmam gerekiyorsa ve  sql injection saldırılarını engellemek için;
+
+.Net Core da FromSqlInterpolated() metodunu kullanabilirim
+
+ex;
+
+var product = _context.Product.FromSqlInterpolated("Select* from ..");
+
+
+
+
+
+
+
+
